@@ -209,10 +209,7 @@ Currently not injected anywhere in the controller or services — but it's there
 ```
 com.grid07.social_api.repository.UserRepository
 ```
-
-**⚠️ Currently broken — see the fix at the top of this document.**
-
-Should extend `JpaRepository<User, Long>`. Once fixed, it can be used to:
+** it can be used to:
 - Validate that a `userId` exists before sending notifications
 - Look up `isPremium` for future business logic
 
