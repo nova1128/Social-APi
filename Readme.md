@@ -3,36 +3,6 @@
 > Spring Boot social platform API with bot guardrails, virality scoring, and smart notifications.  
 > Stack: Java 21 · Spring Boot · PostgreSQL · Redis · Lombok
 
----
-
-## ⚠️ UserRepository — Does it need to be extended?
-
-**Yes. Fix this immediately.**
-
-Right now `UserRepository` is just an empty class:
-
-```java
-// Current (BROKEN)
-public class UserRepository {
-}
-```
-
-It should be an interface extending `JpaRepository`, exactly like `PostRepository`, `CommentRepository`, and `BotRepository` do. Without this, Spring can't inject it anywhere and you'll get a `NoSuchBeanDefinitionException` at runtime the moment you try to use it.
-
-```java
-// Fix
-package com.grid07.social_api.repository;
-
-import com.grid07.social_api.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface UserRepository extends JpaRepository<User, Long> {}
-```
-
-That one-liner gives you `save()`, `findById()`, `findAll()`, `deleteById()`, and a bunch more for free — no implementation needed.
-
----
-
 ## Table of Contents
 
 - [SocialApiApplication](#socialApiapplication)
