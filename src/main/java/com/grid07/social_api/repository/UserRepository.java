@@ -1,4 +1,6 @@
 package com.grid07.social_api.repository;
 
-public class UserRepository {
-}
+import com.grid07.social_api.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {}

@@ -1,7 +1,7 @@
 # Social API — Spring Boot Microservice //Assignment//
 
 ## Tech Stack
-- Java 17+,Spring Boot 4.x
+- Java 17+,Spridokng Boot 4.x
 - PostgreSQL(Docker)
 - Redis(Docker)
 
